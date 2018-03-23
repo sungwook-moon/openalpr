@@ -1,7 +1,7 @@
-import com.openalpr.jni.Alpr;
-import com.openalpr.jni.AlprPlate;
-import com.openalpr.jni.AlprPlateResult;
-import com.openalpr.jni.AlprResults;
+import org.openalpr.Alpr;
+import org.openalpr.AlprPlate;
+import org.openalpr.AlprPlateResult;
+import org.openalpr.AlprResults;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -24,7 +24,7 @@ public class Main {
             System.exit(1);
         }
 
-        Alpr alpr = new Alpr(country, configfile, runtimeDataDir);
+        AlprJNIWrapper alpr = new AlprJNIWrapper(country, configfile, runtimeDataDir);
 
         alpr.setTopN(10);
         alpr.setDefaultRegion("wa");
